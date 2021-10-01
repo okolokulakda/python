@@ -1,0 +1,4 @@
+a=float(input("Massa="))
+b=float(input("Visota="))
+ind=a/(b*b)
+print(ind)

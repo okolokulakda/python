@@ -1,0 +1,6 @@
+a= float(input("hour="))
+b=float(input("min="))
+c=float(input("sec="))
+a=a*3600
+b=b*60
+print(a+b+c)
