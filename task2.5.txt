@@ -1,0 +1,18 @@
+import random
+n=int(input("Введите максимальное число"))
+k=int(input("Введите максимальное число попыток"))
+i=1
+x=random.randint(1, n )
+while i<=k:
+    a=int(input("Ваше число"))
+    if a>x:
+        print("Много")
+    elif a<x:
+        print("Маловато")
+    else:
+        print("Вы угадали")
+        break
+    i+=1
+
+if i > k: 
+     print("Попыток больше нет")
