@@ -1,0 +1,7 @@
+a=float(input("Стартовое количество"))
+b=float(input("Среднесуточное увеличение"))
+n=int(input("Кол-во дней"))
+for i in range(n):
+    print(i+1,a)
+    a=a+a*(b/100)
+    
