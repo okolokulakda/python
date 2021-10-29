@@ -1,0 +1,11 @@
+a = input()
+a = a.split(' ')
+te = []
+for i in range(len(a)):
+    d = a[i]
+    d = list(d)
+    d = d[0]
+    te.append(d)
+    te.append('. ')
+te = ''.join(te)
+print(te)

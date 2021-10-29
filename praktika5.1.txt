@@ -1,0 +1,15 @@
+def f(a,n):
+    a = a.split(' ')
+    m = len(a)
+    a1 = []
+    for i in range(1,m):
+        if int(a[i]) > n:
+            l = a[i]
+            a1.append(l)
+    return a1
+    
+print('Введите строчку чисел')
+a = input()
+print('Введите число')
+n = int(input())
+print(f(a,n))

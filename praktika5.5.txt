@@ -1,0 +1,26 @@
+def glas(a):
+    spis = 'а, о, и, е, ё, э, ы, у, ю, я'
+    spis = spis.split(', ')
+    a = list(a)
+    num = 0
+    for i in range(len(a)):
+        if a[i] in spis:
+            num += 1
+    return num
+    
+def sogl(a):
+    spis = 'б, в, г, д, ж, з, й, к, л, м, н, п, р, с, т, ф, х, ц, ч, ш, щ'
+    spis = spis.split(', ')
+    a = list(a)
+    num = 0
+    for i in range(len(a)):
+        if a[i] in spis:
+            num += 1
+    return num
+    
+a = input('Введите строку: ')
+fun = int(input('0 - гласные буквы, 1 - согласные: '))
+if fun == 0:
+    print(glas(a))
+elif fun == 1:
+    print(sogl(a))
