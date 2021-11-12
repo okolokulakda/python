@@ -34,3 +34,18 @@ def print_till_zero(n):
     if n > 1:
         print_till_zero(n-1)
 print(print_till_zero(n))
+4.
+def max_in(list):
+    if len(list) > 1:
+        list2 = list[:]
+        del list2[len(list2)-1]
+        im = max_in(list)-1
+        if list[len(list)-1]>list(im):
+            f=len(list)-1
+        else:
+            f=im
+    else:
+        f=0
+    return f+1
+list=list(map(int,input().split()))
+print(max_in(list))
