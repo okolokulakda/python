@@ -1,0 +1,34 @@
+1.
+v = int(input("Скорость: "))
+t = int(input("Часы движения: "))
+for i in range(1, t+1):
+    print("Часы:", i ,"Расстояние:", i * v)
+    
+2.
+a = 0
+su = 0
+while a >= 0:
+    a = int(input())
+    if a >= 0:
+        su += o
+print(su)
+
+3.
+a = int(input())
+b = 1
+for i in range(1, a+1):
+    b *= i
+print(b)
+
+4.
+start = int(input("Стартовое количество: "))
+high = float(input("Процент среднесуточного увеличения: "))
+days = int(input("Количество дней на размножение: "))
+high = 1 + high/100
+for i in range(1, days + 1):
+    print("День:", i, "Популяция:", start * high**(i-1))
+
+5.
+a = int(input("Введите положительное число: "))
+for i in range(a+1):
+    print("#" + " "*i + "#")
