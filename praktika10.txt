@@ -1,0 +1,34 @@
+1.
+n=int(input())
+def fibonacci(n):
+    if n in (1, 2):
+        return 1
+    else:
+        return fibonacci(n - 1) + fibonacci(n - 2)
+print(fibonacci(n))
+2.
+На каждом этапе выполнения функции n будет вызываться дважды.
+Поэтому можно сделать вывод, что сложность функции будет вычисляться как 2^n
+3.
+fib_cache = {1: 1, 2: 1}
+n=int(input())
+def mem(n):
+    result = fib_cache.get(n)
+    if result is None:
+        result = mem(n-2) + mem(n-1)
+        fib_cache[n] = result
+    return result
+print(mem(n))
+4.
+С учетом мемоизвции переменная n вызывается в самом начале, после она вызывается из памяти.
+Суммарная сложность алгоритма выйдет n
+5.
+n = int(input())
+a_fib = {1: 1, 2: 1}
+def mem_1(n):
+    result = a_fib.get(n)
+    while result == None:
+        result = mem_1(n-2) + mem_1(n-1)
+        a_fib[n]= result
+    return result
+print(mem_1(n))
