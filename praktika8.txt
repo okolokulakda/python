@@ -1,0 +1,82 @@
+1.
+import argparse
+import os.path
+parser = argparse.ArgumentParser()
+parser.add_argument("a", type=str)
+args = parser.parse_args()
+def s(a):
+    if os.path.exists(a):
+       with open(f'{args.a}') as file:
+            for i in range(10):
+                ln = file.readline()
+                print(ln.strip())
+       return ln
+    else:
+        print("Такого файла нет")
+s(args.a)
+2.
+import argparse
+import os.path
+parser = argparse.ArgumentParser()
+parser.add_argument("a", type=str)
+parser.add_argument("b", type=str)
+args = parser.parse_args()
+def s(a,b):
+    if os.path.exists(a) and os.path.exists(b):
+       with open(f'{args.a}') as file:
+           with open(f'{args.b}') as file1:
+                while True:
+                    ln = file.readline()
+                    print(ln.strip())
+                    if not ln:
+                        break
+                while True:
+                    ln = file1.readline()
+                    print(ln.strip())
+                    if not ln:
+                        break
+       return ln
+    else:
+        print("Какого-то файла нет")
+s(args.a, args.b)
+3.
+3
+import argparse
+parser = argparse.ArgumentParser(description='dada')
+parser.add_argument('dadada', type=str)
+arg = parser.parse_args()
+with open(f'{arg.dadada}') as file:
+    lines = file.readlines()
+    with open(f'{arg.dadada}', 'w') as file:
+        for i, line in enumerate(lines, 1):
+            if len(line) != 0:
+                string = str(str(i) + ': ' + str(line))
+                file.write(string)
+            else:
+                break
+6.
+6
+import os
+def replace_word():
+    temp = 0
+    temp_list = []
+    word = "строка-образец"
+    filename = 'example.txt'
+    with open(filename, 'r') as file:
+        for item in file:
+            temp += 1
+            if temp == 3:
+                if word in item:
+                    print ("ok")
+                else:
+                    print ("error")
+                    file.close() 
+                    os.remove(filename)
+                    return 0
+            temp_list.extend([item])            
+    temp_list[5] = temp_list[3] 
+    with open(filename, 'w') as file:
+        for item in temp_list:
+            file.write(item)
+if __name__ == '__main__':
+    replace_word()
